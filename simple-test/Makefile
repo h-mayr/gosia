@@ -1,4 +1,4 @@
-GOSIADIR=/home/warr/devel/gosia
+GOSIADIR=../src
 
 INP += simple-test.inp
 INP += fort.9
@@ -8,6 +8,7 @@ OUT += fort.14
 OUT += fort.15
 OUT += fort.17
 OUT += fort.22
+OUT += fort.99
 
 all: compare
 
@@ -21,5 +22,5 @@ fort.22: $(GOSIADIR)/gosia
 	$(GOSIADIR)/gosia < simple-test.inp
 
 clean:
-	rm -f *~ $(OUT)
+	rm -f *~ $(OUT) $(GOSIADIR)/*.o $(GOSIADIR)/gosia
 
