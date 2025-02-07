@@ -1,9 +1,16 @@
 This is the git repository for the Coulomb-excitation code gosia. It is based on the original code of Tomasz Czosnyka ([homepage](https://www.pas.rochester.edu/~cline/Gosia/)).  
-gosia is not to be confused with gosia2.
+GOSIA is not to be confused with GOSIA2.
 
 ## Documentation
-Many information can be found in the gosia [wiki](https://www-user.pas.rochester.edu/~gosia/mediawiki/index.php/Main_Page).
-A list of functions contained in gosia can be found in the [list_of_functions.txt](list_of_functions.txt).
+The documentation is located in the `doc` directory. It contains the GOSIA manual in different revisions.
+
+Documentation of the internal structure of the code can be found in `internals`, including a [list of function](doc/internals/list_of_functions.txt). A pdf can be build out of the tex sources via
+```bash
+cd doc/internals
+make all
+```
+
+More information can be found in the gosia [wiki](https://www-user.pas.rochester.edu/~gosia/mediawiki/index.php/Main_Page).
 
 ## Build
 Note that in the git tree, the code is split into separate files for each function. These are combined using  
@@ -21,3 +28,9 @@ gfortran gosia_${version}.f -o gosia
 ```
 
 ## Test
+A simple test can be run with
+```bash
+cd simple-test
+make all
+```
+Same can be done with the test for generating detector geometries inside the `generate-gdet-test` directory. For this test, GOSIA must be built before.
